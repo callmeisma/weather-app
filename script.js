@@ -1,3 +1,5 @@
+const apiKey = '';
+
 // get location from user
 function getInput() {
     const userInput = document.getElementById('userInput').value;
@@ -7,7 +9,7 @@ function getInput() {
 
 // fetch weather from user location
 async function getWeather(location, units) {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?&appid=50b1eebb44635563594202ca273ba117&q=${location}&units=${units}`, {mode: 'cors'})
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?&appid=${apiKey}&q=${location}&units=${units}`, {mode: 'cors'})
     if (response.status === 400) {
         alert('Please input desired city weather');
     } else {
